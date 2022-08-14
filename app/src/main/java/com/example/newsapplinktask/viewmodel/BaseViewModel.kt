@@ -15,16 +15,12 @@ abstract class BaseViewModel : ViewModel() {
 
     var errorDialog: SingleLiveEvent<ErrorScreen> = SingleLiveEvent()
     var showFullLoading: SingleLiveEvent<Boolean> = SingleLiveEvent()
-    var showSuccessDialog: SingleLiveEvent<Boolean> = SingleLiveEvent()
     private var connectJob: Job? = null
 
 
-
-
-
     fun fetchData(
-        cash: Boolean, type: Type, requestFactory: BaseRequestFactory, showLoading: Boolean = true,
-        showSuccess: Boolean = false, showError: Boolean = true,
+         type: Type, requestFactory: BaseRequestFactory, showLoading: Boolean = true,
+         showError: Boolean = true,
         proceedResponse: (
             t: Any?
         ) -> Unit
@@ -45,10 +41,8 @@ abstract class BaseViewModel : ViewModel() {
         }
         fetchLogic(
             showLoading,
-            showSuccess,
             showError,
             exceptionHandler,
-            cash,
             type,
             requestFactory,
             proceedResponse
@@ -57,10 +51,8 @@ abstract class BaseViewModel : ViewModel() {
 
     private fun fetchLogic(
         showLoading: Boolean,
-        showSuccess: Boolean,
         showError: Boolean,
         exceptionHandler: CoroutineExceptionHandler,
-        cash: Boolean,
         type: Type,
         requestFactory: BaseRequestFactory,
         proceedResponse: (t: Any?) -> Unit
@@ -68,17 +60,12 @@ abstract class BaseViewModel : ViewModel() {
         if (showLoading)
             showFullLoading.value = true
         connectJob = CoroutineScope(Dispatchers.IO + exceptionHandler).launch {
-            val response = getDispatcher()?.fetchData(cash, type, requestFactory)
+            val response = getDispatcher()?.fetchData( type, requestFactory)
             withContext(Dispatchers.Main) {
                 proceedResponse(response)
                 if (showLoading)
                     showFullLoading.value = false
 
-                if (response is BaseModel) {
-                    if (response.status == "ok" && showSuccess)
-                        showSuccessDialog.value = true
-
-                }
 
 
             }

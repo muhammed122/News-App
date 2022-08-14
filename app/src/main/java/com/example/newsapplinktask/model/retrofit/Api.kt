@@ -1,6 +1,6 @@
 package com.example.newsapplinktask.model.retrofit
 
-import com.example.newsapplinktask.model.response.ArticlesResponse
+import com.example.newsapplinktask.model.response.article.ArticlesResponse
 import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.HeaderMap

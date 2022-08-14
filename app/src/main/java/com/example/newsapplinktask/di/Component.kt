@@ -1,6 +1,6 @@
 package com.example.newsapplinktask.di
 
-//val appComponents = listOf(
-//
-//)
-//val networkComponent = listOf()
+val appComponents = listOf(
+    article
+)
+val networkComponent = listOf(networkModule)

@@ -11,7 +11,7 @@ import java.lang.reflect.Type
 interface BaseDispatcher {
     val remoteRepo: BaseRemoteRepo
 
-    suspend fun fetchData(cash: Boolean, type: Type, requestFactory: BaseRequestFactory): Any? {
+    suspend fun fetchData( type: Type, requestFactory: BaseRequestFactory): Any? {
         var errorMessage: String? = null
         var responseCode: String? = null
         val response = try {
@@ -19,6 +19,7 @@ interface BaseDispatcher {
             if (isNetworkConnected) {
                 requestFactory.baseRequestParam.apiKey = Constant.API_KEY
                 remoteRepo.fetchData(requestFactory)
+
             } else {
                 errorMessage = NetworkUtil.NETWORK_ERROR_MSG
                 responseCode = NetworkUtil.NO_INTERNET_CONNECTION_CODE

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/nav_exploer_item"
+        android:title="@string/exploer"
+        android:icon="@drawable/explore"
+        />
+
+    <item
+        android:id="@+id/nav_live_chat_item"
+        android:title="@string/live_chat"
+        android:icon="@drawable/live"/>
+
+    <item
+        android:id="@+id/nav_gallery_item"
+        android:title="@string/gallery"
+        android:icon="@drawable/gallery"/>
+
+    <item
+        android:id="@+id/nav_wish_list_item"
+        android:title="@string/wish_list"
+        android:icon="@drawable/wishlist"/>
+
+    <item
+        android:id="@+id/nav_magazine_item"
+        android:title="@string/e_magazine"
+        android:icon="@drawable/e_magazine"
+        />
+
+
+</menu>

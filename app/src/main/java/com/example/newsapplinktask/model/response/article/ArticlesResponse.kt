@@ -1,15 +1,16 @@
-package com.example.newsapplinktask.model.response
+package com.example.newsapplinktask.model.response.article
 
+import com.example.newsapplinktask.model.response.BaseModel
 import com.google.gson.annotations.SerializedName
 import java.io.Serializable
 
 data class ArticlesResponse(
-    val payload: ArticlesPayload? = null,
+
+    @SerializedName("articles")
+    val payload: List<ArticlesItem>? = null,
 ) : BaseModel()
 
-data class ArticlesPayload(
-    val articles: List<ArticlesItem>
-) : BaseModel.Payload()
+
 
 data class ArticlesItem(
 

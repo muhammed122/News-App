@@ -1,6 +1,16 @@
 <resources>
-    <string name="app_name">NewsAppLinkTask</string>
+    <string name="app_name">LINK DEVELOPMENT</string>
     <string name="error_client">Error Client</string>
     <string name="no_internet_connection">No Internet Connection</string>
     <string name="error_server">Error Server</string>
+    <string name="exploer">Exploer</string>
+    <string name="live_chat">Live Chat</string>
+    <string name="gallery">Gallery</string>
+    <string name="wish_list">Wish List</string>
+    <string name="e_magazine">E-Magazine</string>
+    <string name="nav_open">Open</string>
+    <string name="nav_close">Close</string>
+    <string name="welcome">Welcome</string>
+    <string name="open_website">Open Website</string>
+    <string name="search">Search</string>
 </resources>
